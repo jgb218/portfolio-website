@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<!--
+index.html
+Jeff Bulick
+CSE 264 
+05.04.16
+Final Project
+The purpose of this web application is to create a 
+hangman mobile web application.
+-->
+<html>
+    <head>
+        <title>Hangman Mobile</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        <style>
+            
+            body{
+                font-family: "Comic Sans MS";
+            }
+            .page-wrap {
+                max-width: 800px;
+                margin: 0 auto;
+            }
+            .ui-content{
+                overflow: auto;
+            }
+            /*Landing page links*/
+            .gametitle{
+                background-color: #ccffff;
+                padding: 10px;
+                position:absolute;
+                left:50%;
+                top:40%;
+                font-size: 20px;
+                margin:-100px 0 0 -100px;
+            }
+            /*Back button link*/
+            .link {
+                text-align: center;
+                margin: 10px;
+                padding: 20px;
+                background-color: #e9e9e9;
+            }
+            a{
+                text-decoration: none;
+                margin: 5px;
+            }
+            /*Handles the back button link*/
+            div.back {
+                color: #ff8080;
+                font-size: 16px;
+                margin: 5px;
+            }
+            /*Attached to the image object*/
+            .picture{
+                width: 100%;
+                height: 100%;
+            }
+            /*the letter grid*/
+            #alphabet{
+                background-color: #ccffff;
+                margin: 0 auto 0 auto;
+                border-spacing: 5px;
+                padding: 5px;
+                padding-top: 0px;
+                font-size: 18px;
+            }
+            /*Contains both columns*/
+            section{
+                width: 100%;
+                height: 300px;
+                margin: auto;
+            }
+            /*The left column holds hangman image*/
+            #picture{
+                width: 48%;
+                height: 300px;
+                float: left;
+                margin: 1px;
+            }
+            /*Div right column holds letter table*/
+            #letters{
+                height: 300px;
+                empty-cells: hide;
+                margin-left: 50%;
+            }
+            /*letter cells in selectable table*/
+            .letter{
+                padding: 5px;
+                background-color: #e9e9e9;
+            }
+            /*unknown letters where secret word is revealed*/
+            .secretletter{
+                padding: 5px;
+                margin: 10px;
+                border-bottom: 2px black solid;
+            }
+            /*children (the table) of secret word row*/
+            #wordrow{
+                background-color: #ccffff;
+                padding: 0px;
+                margin: 0px;
+                border-spacing: 10px;
+                font-size: 20px;
+                margin: auto;
+            }
+            /*Score display*/
+            #score{
+                text-align: right;
+                padding: 0px;
+                margin: 5px;
+            }
+            /*Categories on selectcategory page*/
+            #categorytitle{
+                margin: 5px;
+                padding: 5px;
+                text-align: center;
+            }
+            /*Number of lives display*/
+            #lives{
+                margin: 10px;
+                text-indent: 0em;
+            }
+            /*Handles main div for loserpage*/
+            #endtitle{
+                background-color: #ccffff;
+                margin: 10px;
+                text-align: center;
+            }
+            /*ending image*/
+            #endpic{
+                height: 300px;
+                width: 60%;
+            }
+            /*Titles on loserpage*/
+            .endtitles{
+                padding: 5px;
+                margin: 10px;
+                font-size: 26px;
+            }
+            /*Handles score on loserpage*/
+            #endscore{
+            }
+            /*Div for main instruction content*/
+            #instructioncontent{
+                background-color: #ccffff;
+                padding: 10px;
+                margin: 10px;
+                text-align: center;
+            }
+            .instructionlist{
+                font-size: 16px;
+                text-align: left;
+            }
+
+        </style>
+        <script>
+            
+            //global variables
+            var imgArray = [];  //array to hold the pictures for the hangman
+            var selectedLetter;  //most recent letter selected by user
+            var charArray;  //current word in array of "chars" user is guessing
+            var currentArray = [];  //current Array word is selected from
+            var score = 0;  //users score for the current game
+            var lives;  //users lives left for current game
+            var lifeNumber = 8;  //number of lives allowed per game
+            var sportArray;
+            var carArray;
+            var stateArray;
+            var clothingArray;
+            
+            $( document ).ready(function() {
+                initWords();  //initialize secret word arrays
+                initCards();  //initialize array of card images
+            });
+            
+            //declares arrays with secret words
+            function initWords(){
+                sportArray = ["Archery","Badminton","Baseball","Basketball","Beach Volleyball","Bowling","Boxing","Cheerleading","Chess","Cricket","Curling","Figure Skating","Fishing","Football","Golf","Gymnastics","Hockey","Hunting","Ice Skating","Lacrosse","Luge","Racquetball","Rock Climbing","Rowing","Rugby","Sailing","Skateboarding","Skeet Shooting","Snow Boarding","Soccer","Speed Skating","Squash","Surfing","Swimming","Table Tennis","Tennis","Track and Field","Volleyball","Weight Lifting","Wrestling"];
+                carArray = ["Acura","Alfa Romeo","Aston Martin","Audi","Bentley","BMW","Bugatti","Buick","Cadillac","Chevrolet","Chrysler","Corvette","Dodge","Ferrari","Fiat","Ford","GMC","Honda","Hyundai","Infiniti","Isuzu","Jaguar","Jeep","Koenigsegg","Lamborghini","Land Rover","Lexus","Lincoln","Lotus","Maserati","Mazda","McLaren","Mercedes-Benz","Nissan","Porsche","Ram","Rolls-Royce","Saab","Smart","Tesla","Toyota","Volkswagen","Volvo"];
+                stateArray = ["Alabama" ,"Alaska" ,"Arizona" ,"Arkansas" ,"California" ,"Colorado" ,"Connecticut" ,"Delaware" ,"Florida" ,"Georgia" ,"Hawaii" ,"Idaho" ,"Illinois", "Indiana" ,"Iowa" ,"Kansas" ,"Kentucky" ,"Louisiana" ,"Maine" ,"Maryland" ,"Massachusetts" ,"Michigan" ,"Minnesota" ,"Mississippi" ,"Missouri" ,"Montana", "Nebraska" ,"Nevada" ,"New Hampshire" ,"New Jersey" ,"New Mexico" ,"New York" ,"North Carolina" ,"North Dakota" ,"Ohio" ,"Oklahoma" ,"Oregon" ,"Pennsylvania", "Rhode Island" ,"South Carolina" ,"South Dakota" ,"Tennessee" ,"Texas" ,"Utah" ,"Vermont" ,"Virginia" ,"Washington" ,"West Virginia" ,"Wisconsin" ,"Wyoming"];
+                clothingArray = ["Adidas","Armani","Calvin Klein","Champion","Chanel","Christian Dior","Columbia","Converse","Dolce&Gabbana","Eddie Bauer","Gucci","J.Crew","Izod","Lacoste","Levi","Michael Kors","Nike","Oneill","Perry Ellis","Prada","Puma","Quiksilver","Polo Ralph Lauren","Speedo","Timberland","Tommy Hilfiger","Vans","Versace","Wrangler"];
+            }
+            
+            //initializes array of pictures for amount guessed
+            function initCards(){
+                for(var i=0; i<lifeNumber+1; i++){
+                    var x = document.createElement("IMG");
+                    var address = "images/"+i+".jpg";
+                    x.setAttribute("src",address);
+                    imgArray[i] = x;
+                }
+            }
+            
+            //Resets and plays the game
+            function playGame(){
+                $("#score").html("Score: "+score);
+                loadPicture(0);  //append empty picture to screen
+                loadLetters();  //fill table with letters of alphabet
+                selectWord(currentArray);  //gets random word from array
+                lives = lifeNumber;
+                $("#lives").html("Lives: "+lives);
+            }
+            
+            //Chooses category of words to randomize from based on link clicked
+            function selectArray(link){
+                $("#categorytitle").html("Category: "+link.innerHTML);
+                switch(link.innerHTML){
+                    case "Sports":
+                        currentArray = sportArray;
+                        break;
+                    case "Car Brands":
+                        currentArray = carArray;
+                        break;
+                    case "USA States":
+                        currentArray = stateArray;
+                        break;
+                    case "Clothing Brands":
+                        currentArray = clothingArray;
+                        break;
+                    default:
+                        alert("Software Error: wrong array title");
+                }
+                playGame();  //plays the game 
+            }
+            
+            //Displays picture based on amount guessed
+            function loadPicture(number){
+                $("#picture").html("");  //delete previous picture img
+                var pic = imgArray[number];
+                pic.setAttribute("class","picture");
+                $("#picture").append(pic);
+            }
+            
+            //retrieves anteceding char from parameter char
+            function nextChar(c){
+                return String.fromCharCode(c.charCodeAt(0) + 1);
+            }
+            
+            //returns true if one char any case alphabetic
+            function isAlpha(str){
+                return /^[a-zA-Z]$/.test(str);
+            }
+            
+            //returns true if param is whitespace char
+            function isSpace(str){
+                return /^[\s]$/.test(str);
+            }
+            
+            //initializes table with all letters of alphabet
+            function loadLetters(){
+                var row;
+                var cell;  
+                var currentLetter = 'A';
+                $("#letterbody").html("");  //clear previous table
+                for(var i=0; i<26; i++){
+                    if( (i%6)===0 ){  
+                        row = $("<tr>");
+                        $("#letterbody").append(row);
+                    }
+                    cell = $("<td>"+currentLetter+"</td>");
+                    cell.attr("class","letter");
+                    row.append(cell);
+                    currentLetter = nextChar(currentLetter);  //increment letter
+                }
+                //attach event handler to the letters
+                $(".letter").click(handleLetter);
+            }
+            
+            //randomly select word from array and load spots on screen
+            function selectWord(wordArray){
+                //retreive word from category array and turn into array of chars
+                var wordIndex = Math.floor(Math.random()*wordArray.length);  //randomize number from 0 to arraylength
+                charArray = wordArray[wordIndex].split("");  //turn selected word into array of chars
+                //display spots for user to see length of word
+                var cell;  
+                $("#secretword").html("");  //clear previous table
+                for(var i=0; i<charArray.length; i++){
+                    cell = $("<td>&nbsp;</td>");
+                    if( !isAlpha(charArray[i]) ){  //show chars that arent alphabetic
+                        cell = $("<td>"+charArray[i]+"</td>");
+                    }
+                    if( isSpace(charArray[i]) ){  //place seperator for space
+                        cell = $("<td>|</td>");
+                    }
+                    cell.attr("class","secretletter");
+                    cell.attr("id",i);
+                    $("#secretword").append(cell);
+                }
+            }
+            
+            //checks if letter is in word:
+            //  true: displays matching letters and checks if finished
+            //  false: decrements a life
+            function handleLetter(){
+                selectedLetter = this.innerHTML; 
+                this.innerHTML = "";  //clears cell
+                //check to see if it is in secret word
+                var check = false;  //boolean stores if selected letter is in word
+                var indices = [];  //array of indices of matching letters
+                for(var i=0; i<charArray.length; i++){
+                    //below line is insensitive case comparison between selected letter 
+                    // and letters in secret word
+                    var areEqual = selectedLetter.toUpperCase() === charArray[i].toUpperCase(); 
+                    if( isAlpha(charArray[i]) && areEqual ){
+                        check = true;  //letter matches in word
+                        indices.push(i);
+                    }
+                }
+                //do action based on if in word or not
+                if(check){  //there is at least one matching letter
+                    displayLetters(indices);  
+                    if(isComplete()){
+                        alert("Correct!");
+                        score++;  //add one to the score counter
+                        $("#score").html("Score: "+score);
+                        playGame();  //infinite loop until exit
+                    }
+                }
+                else{  //there is no matching letter
+                    removeLife();
+                }
+            }
+            
+            //prints out matching letters to secret word table row
+            function displayLetters(indices){
+                for(var i=0; i<indices.length; i++){
+                    $("#"+indices[i]+"").html(charArray[indices[i]]);
+                }
+            }
+            
+            //returns true if secret word is completely revealed
+            function isComplete(){
+                var check = true;
+                //word is revealed if there are no nbsp; in secretword row
+                $(".secretletter").each(function(index){
+                    if(this.innerHTML==="&nbsp;"){
+                        check = false;
+                    }
+                });
+                return check;
+            }
+            
+            //Removes life,updates the screen, and checks for loss 
+            function removeLife(){
+                lives--; //take away a life
+                $("#lives").html("Lives: "+lives);
+                loadPicture(lifeNumber-lives);  //load next image
+                if(lives === 0){
+                    var scoreTitle = $("<h2>Your Score Was: "+score+"<h2>").addClass("endtitles");
+                    $("#endscore").html(scoreTitle);
+                    score = 0; //reset score
+                    $.mobile.changePage($("#loserpage"),{transition: "flip"});
+                }                
+            }
+            
+        </script>
+    </head>
+    <body>
+        
+        <div data-role="page" id="landingpage">
+            <div data-role="header">
+                <h1>Hangman Mobile</h1>
+            </div>
+            <div class="page-wrap">
+                <div data-role="main" id="test" class="ui-content">
+                    <div class="gametitle">
+                        <div class="link">
+                            <a href="#categoryselect" data-transition="flow">Start Game!</a>
+                        </div>
+                        <div class="link">
+                            <a href="#instructions" data-transition="flow">Instructions</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div data-role="footer" data-position="fixed">
+              <h2>&copy; Jeff Bulick 2016, Version 0.0.1 </h2>
+            </div>
+        </div> 
+        
+        <div data-role="page" id="categoryselect">
+            <div data-role="header">
+                <h1>Pick A Category</h1>
+            </div>
+            <div class="page-wrap">
+                <div data-role="main" class="ui-content">
+                    <div class="back">
+                        <a href="#landingpage" data-transition="slide" data-direction="reverse">&lt;- Main menu</a>
+                    </div>
+                    <div class="gametitle">
+                        <div class="link">
+                            <a href="#game" data-transition="flow" onclick="selectArray(this)">Sports</a>
+                        </div>
+                        <div class="link">
+                            <a href="#game" data-transition="flow" onclick="selectArray(this)">Car Brands</a>
+                        </div>
+                        <div class="link">
+                            <a href="#game" data-transition="flow" onclick="selectArray(this)">USA States</a>
+                        </div>
+                        <div class="link">
+                            <a href="#game" data-transition="flow" onclick="selectArray(this)">Clothing Brands</a>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+            <div data-role="footer" data-position="fixed">
+              <h2>&copy; Jeff Bulick 2016, Version 0.0.1 </h2>
+            </div>
+        </div>
+        
+        <div data-role="page" id="instructions">
+            <div data-role="header">
+                <h1>Instructions</h1>
+            </div>
+            <div class="page-wrap">
+                <div data-role="main" class="ui-content">
+                    <div class="back">
+                        <a href="#landingpage" data-transition="slide" data-direction="reverse">&lt;- Main menu</a>
+                    </div>
+                    <div id="instructioncontent">
+                        <h2>How to Play</h2>
+                        <ol class="instructionlist">
+                            <li>Select a topic category to generate a random word. </li>
+                            <li>Choose a letter from the alphabet table to guess the word.</li>
+                            <li>If correct, number of letters will appear in bottom row.
+                                If incorrect, you will lose a life and hangman will get closer to the end.</li>
+                            <li>You have 8 lives per word attempt.</li>
+                            <li>1 point is awarded for each solved word.</li>
+                            <li>Game is played until you hang the man.</li>
+                        </ol>
+                        <ul class="instructionlist">
+                            <li>Note:</li>
+                            <li>Your category does not change until you go back a page and select a different one.</li>
+                            <li>Do NOT load the game from a page other than the "landingpage".  
+                            Do NOT use the browser back/forward arrows for page transition, use only the links on page.
+                            This will mess up the function calls and cause a software crash due to an empty array.</li>
+                        </ul>
+                    </div>
+                    <div class="link">
+                            <a href="#categoryselect" data-transition="flow">Start Game!</a>
+                    </div>
+                </div>
+            </div>
+            <div data-role="footer" data-position="fixed">
+              <h2>&copy; Jeff Bulick 2016, Version 0.0.1 </h2>
+            </div>
+        </div>
+        
+        <div data-role="page" id="game">
+            <div data-role="header">
+              <h1>Hangman Mobile</h1>
+            </div>
+            <div class="page-wrap">
+                <div data-role="main" class="ui-content">
+                    <div class="back">
+                        <a href="#categoryselect" data-transition="slide" data-direction="reverse">&lt;- Category select</a>
+                    </div>
+                    <div>
+                        <p id="score"></p>
+                    </div>
+                    <section>
+                        <div id="picture">
+
+                        </div>
+                        <div id="letters">
+                            <p id="categorytitle">Category: Sports</p>
+                            <table id="alphabet">
+                                <tbody id="letterbody"></tbody>  <!-- Jquery remakes table of alphabet each time game ends -->
+                            </table>
+                        </div>
+                    </section>
+                    <div>
+                        <p id="lives"></p>
+                        <table id="wordrow">
+                            <tr id="secretword"><td></td></tr> <!-- Secret word blanks will be created here with Jquery -->
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div data-role="footer" data-position="fixed">
+                <h2>&copy; Jeff Bulick 2016, Version 0.0.1 </h2>
+            </div>
+        </div>
+        
+        <div data-role="page" id="loserpage">
+            <div data-role="header">
+                <h1>Hangman Mobile</h1>
+            </div>
+            <div class="page-wrap">
+                <div data-role="main" class="ui-content">
+                    <div class="back">
+                        <a href="#landingpage" data-transition="slide" data-direction="reverse">&lt;- Main menu</a>
+                    </div>
+                    <div id="endtitle">
+                        <h2 class="endtitles">You Lose!</h2>
+                        <img id="endpic" src="images/8.jpg" alt="hung man">
+                        <div id="endscore"></div>
+                    </div>
+                </div>
+            </div>
+            <div data-role="footer" data-position="fixed">
+              <h2>&copy; Jeff Bulick 2016, Version 0.0.1 </h2>
+            </div>
+        </div>
+        
+    </body>
+</html>

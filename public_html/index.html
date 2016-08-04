@@ -1,0 +1,128 @@
+<!-- 
+index.html
+Jeff Bulick
+06.28.2016
+Landing page for my portfolio.
+-->
+
+<!DOCTYPE html>
+<html lang="en-US">
+    
+<!-- This is meta data about the site -->
+<head>
+    <title> Jeff Bulick - home </title>
+    <meta name="description" content="Personal Website">
+    <meta charset="UTF-8">
+    <meta name="keywords" content="Jeff Bulick">
+    <meta name="author" content="Jeff Bulick">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="jb_icon.png">
+    <link rel="stylesheet" href="main-theme.css">  
+    <link href='http://fonts.googleapis.com/css?family=Josefin+Sans&subset=latin,latin-ext' rel='stylesheet' type='text/css'>  
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=latin" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="navbar-menu.js" type="text/javascript"></script>    
+</head>
+
+    <body>
+        <div id="container">
+            
+            <!-- banner -->
+            <div id="banner">
+                <ul class="navbar">
+                    <li id="menu-button" class="list" onclick="dropMenu()"><a>MENU</a></li>
+                    <li class="logo"><a href="index.html"><img alt="home button logo" src="Media/jb_icon.png" class="fade"></a></li>
+                </ul>  
+                <ul hidden class="dropdown">
+                    <li><a href="index.html" class="list">HOME</a></li>
+                    <li><a href="Resume/resume.html" class="list">RESUME</a></li>
+                    <li><a href="Portfolio/portfolio.html" class="list">PORTFOLIO</a></li>
+                    <li><a href="test.html" class="list">CONTACT</a></li>
+                </ul> 
+            </div>    
+            <div id="landing-title" class="title-section">
+                <h1>JEFF BULICK</h1>
+                <h2>LEHIGH UNIVERSITY CLASS OF 2018</h2>
+                <h3>​B.S. COMPUTER ENGINEERING, MINOR: ECONOMICS</h3>
+            </div>    
+            
+            <!-- main columns -->
+            <div id="column-wrapper">
+                <div id="left" class="column">
+                    <figure>
+                        <img id="faceshot" src="Media/faceshot.png" alt="profile picture">
+                        <figcaption>Jeff Grant Bulick</figcaption>
+                    </figure>
+                </div>
+                <div id="right" class="column">
+                    <p>
+                        I am a full time undergraduate student at Lehigh University in the P.C. Rossin College 
+                        of Engineering and Applied Science.  I am pursuing a B.S. in Computer Engineering with an Economics minor.  
+                        In my opinion, the blend between both engineering and business courses is a great skill set to take to the 
+                        work place after graduation.  The importance pertaining to feasibility of design should be considered through 
+                        out the design process. My high school degree is from Bergen County Academies, a magnet high school in 
+                        Hackensack, NJ.  I was part of the Class of 2014, the Academy for Engineering and Design Technology.  I recently 
+                        joined the Sigma Phi Epsilon brotherhood, a Lehigh accredited fraternity, and entered the Balanced Man Program. 
+                        I will be partaking in SmartSpaces summer research at Lehigh University funded by the NSF during the summer of 2016.
+                    </p>
+                </div>
+            </div>    
+            
+            <!-- content -->
+            <div id="content">
+                <h1>PROFICIENCIES</h1>
+                <ul>
+                    <li>
+                        <b>Software:</b> C++, Mobile Robotics, Web Design and Applications, Linux, Version Control, Java, Assembly, Python, Mat Lab
+                    </li>
+                    <li>
+                        <b>Hardware:</b> Hands on experience with electronic test equipment and design, SPICE, Arduino, PTH soldering
+                    </li>
+                    <li>
+                        <b>Other:</b> 3D CAD, Machine Shop Experience, Leadership / Teaching, Microsoft Office Suite
+                    </li>
+                    <li>
+                        <a href="Resume/resume.html"><b>&#x21AA;</b> Go To My Resume </a>
+                    </li>
+                </ul>
+                <h1>MOST RECENT WORK</h1>
+                <ul>
+                    <li>
+                        <b>ANAGlyph:</b> Created a reproducible autonomous mobile robot to be used 
+                        as a learning platform by incorporating computer stereo vision and odometry in a Linux environment. 
+                    </li>
+                    <li>
+                        <div id="video-wrapper">
+                            <center>
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/pyaUWZBe6h0" frameborder="0" allowfullscreen></iframe>                          
+                            </center>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="Portfolio/portfolio.html"><b>&#x21AA;</b> Go To My Portfolio</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- footer -->
+            <div id="footer">
+                <ul class="footer">
+                    <li><a target="_blank" href="https://www.linkedin.com/in/jeff-bulick-2a8893aa">LINKED IN</a></li>
+                    <li><a target="_blank" href="https://www.instagram.com/jeff_grant/?hl=en">INSTAGRAM</a></li>
+                    <li><a target="_blank" href="https://www.facebook.com/jeff.g.bulick">FACEBOOK</a></li>
+                    <li><a target="_blank" href="HangmanMobile-jgb218/public_html/index.html">Hangman Mobile</a></li>
+                </ul>
+            </div>
+            
+        </div>        
+    </body>
+</html>
+
+
+<!-- TO DO:
+        Responsive Design:
+        1. Caption Centered
+        2. Adjustable columns for mobile version
+
+        3. Create downloadable button for files!
+-->

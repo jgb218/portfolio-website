@@ -1,0 +1,79 @@
+/*
+portfolio.css
+Jeff Bulick
+07.21.2016
+This cascading styles sheet is the external style sheet 
+for portfolio.html of bulick-portfolio.
+*/
+
+
+
+/******* Title *****************/
+#main-title h1{
+    text-align: center;
+    margin-top: 120px;
+    margin-bottom: 40px;
+    font-size: 26px;
+    color: #3FB2BF;
+    /*color: #333;
+    text-decoration: underline; */
+    letter-spacing: 0.1em;
+}
+/*******************************/
+
+
+
+/******* Content *****************/
+#content {
+    margin: 60px;
+}
+#content li {
+    margin-bottom: 20px;
+}
+#content ul {
+    list-style-type: none;
+    font-size: 18px;
+    color: #333;
+    font-family: 'Cardo', serif; 
+         /*font-family: 'open sans',arial,sans-serif; */
+    line-height: 1.5em;   
+}
+#content ul a {
+    margin-left: 75%;
+    font-size: 16px;
+    line-height: 2em;
+    color: #333;
+    text-decoration: none;
+    transition-property: color;
+    transition-duration: 0.33s;
+    
+    background-color: #BFB8AA;
+    border-radius: 25px;
+    padding: 5px 10px 5px 10px;    
+}
+#content ul a:hover {
+    color: #3FB2BF;
+    text-decoration: none;
+    transition-property: color;
+    transition-duration: 0.33s;
+}
+#content h1{
+    font-size: 20px;
+}
+.portrait {
+    height: 400px;
+}
+.landscape {
+    height: 300px;
+}
+#offput {
+    transform: rotate(90deg);
+}
+figure{
+    margin: 0;
+}
+figcaption {
+    margin-left: 0;
+    font-weight: 400;
+}
+/********************************/

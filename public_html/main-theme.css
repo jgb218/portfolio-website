@@ -1,0 +1,296 @@
+/*
+maintheme.css
+Jeff Bulick
+06.28.2016
+This cascading styles sheet is the external style sheet 
+for index.html of bulick-portfolio.
+*/
+
+/******* Whole Page *****************/
+body {
+    background-color:#F2EFE4; 
+    font-family: Josefin Sans;
+    margin: 0;
+}
+#container{
+    width: 100%; 
+    margin: 0 auto;  
+}
+h1{
+    font-size: 18pt;
+}
+/****************************************/
+
+
+/******* Navigation Bar *****************/
+#banner {
+
+}
+ul.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    
+    position: fixed;
+    top: 0;     
+    width: 100%;
+}
+.navbar img{
+    max-height: 40px;
+    max-width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 2px;
+}
+.navbar li {
+    float: left;
+    border-right: 1px solid rgba(191,184,170,0.5);
+}
+.navbar li:last-child {
+    border-right: none;
+}
+.navbar .list {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 18px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    transition: background-color 0.33s, color 0.33s;
+    cursor: pointer;
+}
+/* Toggled and replaces .list so menu button can match the dropdown bar background */
+.navbar .selected {
+    display: block;
+    background-color: #F2EFE4;
+    color: #3FB2BF;
+    text-align: center;
+    padding: 18px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    transition: background-color 0.33s, color 0.33s;
+    cursor: pointer;
+}
+.navbar .logo {
+    display: block;
+    padding: 0px;
+    margin: 0px;
+}
+.navbar .list:hover {
+    background-color: #F2EFE4;
+    color: #3FB2BF;
+    transition: background-color 0.33s, color 0.33s;
+}
+.navbar .fade {
+   opacity: 1;
+   transition: opacity 0.25s ;
+   -moz-transition: opacity 0.25s ;
+   -webkit-transition: opacity 0.25s ;
+   }
+.navbar .fade:hover {
+    opacity: 0.5;
+}
+/****************************************/
+
+
+
+/******* Dropdown Menu *****************/
+ul.dropdown {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #F2EFE4;
+    border-bottom: 1px solid #333;
+
+    position: fixed;
+    top: 52px;
+    width: 100%;    
+}
+.dropdown li {
+    float: left;
+}
+.dropdown .list  {
+    display: block; 
+    color: #333;
+    text-align: center;
+    padding: 18px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+}
+.dropdown .list:hover {
+    background-color: #F2EFE4;
+    color: #3FB2BF;
+    transition-property: color;
+    transition-duration: 0.33s;
+}
+/* Added to current page with JS and replaces .list */
+.dropdown .highlighted{
+    display: block; 
+    color: #3FB2BF;
+    text-align: center;
+    padding: 18px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+}
+/****************************************/
+
+
+/******* Title Section *****************/
+#landing-title{
+    margin-top: 40px; 
+    padding: 100px; 
+}
+.title-section{
+    background: linear-gradient(141deg, #8C8377 0%, #ADAC9E 51%, #8C8377 75%);
+    text-align: center;
+    color: white;
+    letter-spacing: 0.05em;
+}
+.title-section h1{
+    font-size: 48px;
+    margin: 20px;
+    padding: 0px;
+}
+.title-section h2{
+    font-size: 18px;
+    margin: 20px;
+    padding: 0px;
+}
+.title-section h3{
+    font-size: 16px;
+    margin: 20px;
+    padding: 0px;
+}
+/****************************************/
+
+
+
+/******* Columns  *****************/
+#column-wrapper{
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+.column{
+    
+} 
+#left {
+    float: left;
+    /*background-color: #3FB2BF;*/
+    width: 50%;
+    height: 400px;
+    
+}
+#right{
+    /*background-color: red;*/
+    height: 400px;
+        
+}
+figure{
+    margin: 0;
+}
+figcaption{
+    color: #333;
+    font-size: 18px;
+    margin-left: 36%; /*******NEEDS FIX******/
+    font-weight: bold;
+}
+#faceshot{
+    height: 350px;
+    margin-left: 25%;
+}
+#right p{
+    margin-left: 50%;
+    margin-right: 5%;
+    line-height: 30px;
+    font-family: 'Cardo', serif; 
+      /* font-family: 'open sans',arial,sans-serif; */
+    font-size: 20px;  
+    color: #333;
+}
+
+/****************************************/
+
+
+/******* Content *************************/
+#content {
+    margin: 60px;
+}
+#content h1 {
+    font-size: 18px;
+    color: #3FB2BF;
+    letter-spacing: 0.1em;
+  
+}
+#content ul {
+    list-style-type: none;
+    font-size: 18px;
+    color: #333;
+    font-family: 'Cardo', serif; 
+         /*font-family: 'open sans',arial,sans-serif; */
+    line-height: 1.5em;
+    
+}
+#content ul a {
+    margin-left: 40px;
+    color: #333;
+    text-decoration: none;
+    transition-property: color;
+    transition-duration: 0.33s;
+}
+#content ul a:hover {
+    color: #3FB2BF;
+    text-decoration: none;
+    transition-property: color;
+    transition-duration: 0.33s;
+}
+#video-wrapper {
+    margin: 20px;
+}
+iframe {
+    
+}
+
+/****************************************/
+
+
+
+/******* Footer *************************/
+ul.footer {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+       /* position: fixed; */
+    bottom: 0;
+    width: 100%;
+}
+.footer > li {
+    float: right;
+}
+.footer li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 14px;
+}
+/* Change the link color to #111 (black) on hover */
+.footer li a:hover {
+    background-color: #F2EFE4;
+    color: #3FB2BF;
+    transition: background-color 0.33s, color 0.33s;
+}
+/****************************************/
