@@ -225,11 +225,13 @@ figcaption{
 #content {
     margin: 60px;
 }
+#content li {
+    margin-bottom: 10px;
+}
 #content h1 {
     font-size: 18px;
     color: #3FB2BF;
     letter-spacing: 0.1em;
-  
 }
 #content ul {
     list-style-type: none;
@@ -237,8 +239,6 @@ figcaption{
     color: #333;
     font-family: 'Cardo', serif; 
          /*font-family: 'open sans',arial,sans-serif; */
-    line-height: 1.5em;
-    
 }
 #content ul a {
     margin-left: 40px;
