@@ -6,13 +6,11 @@ This cascading styles sheet is the external style sheet
 for portfolio.html of bulick-portfolio.
 */
 
-
-
 /******* Title *****************/
 #main-title h1{
-    text-align: center;
-    margin-top: 120px;
-    margin-bottom: 40px;
+    margin-top: 40px;
+    margin-left: 40px;
+    margin-bottom: 10px;
     font-size: 26px;
     color: #3FB2BF;
     /*color: #333;
@@ -22,12 +20,13 @@ for portfolio.html of bulick-portfolio.
 /*******************************/
 
 
-
 /******* Content *****************/
 #content {
-    margin: 60px;
+    margin: 0px;
 }
-
+ul {
+    padding-left: 0;
+}
 #content ul {
     list-style-type: none;
     font-size: 18px;
@@ -36,7 +35,7 @@ for portfolio.html of bulick-portfolio.
          /*font-family: 'open sans',arial,sans-serif; */
 }
 #content ul a {
-    margin-left: 75%;
+    margin-left: 20px;
     font-size: 16px;
     line-height: 2em;
     color: #333;
@@ -49,6 +48,7 @@ for portfolio.html of bulick-portfolio.
     padding: 5px 10px 5px 10px;    
 }
 #content ul a:hover {
+    cursor: pointer;
     color: #3FB2BF;
     text-decoration: none;
     transition-property: color;
@@ -57,15 +57,41 @@ for portfolio.html of bulick-portfolio.
 #content h1{
     font-size: 20px;
 }
+#contact-block {
+    width: 100%;
+    min-width: 200px;
+    margin-left: 60px;
+    margin-bottom: 40px;
+    float: left;
+}
+#test-side {
+    float: right;
+    padding-right: 5%;
+    margin-bottom: 100px;
+}
 .portrait {
     height: 400px;
-    margin: 20px;
     border: 2px #333 solid;
+    margin-bottom: 40px;
 }
 .landscape {
     height: 300px;
-    margin: 20px;
     border: 2px #333 solid;
+    margin-bottom: 40px;
+}
+#pano-title {
+    
+}
+.pano {
+    /*height: 225px; */
+   /* margin: 20px; */
+   width: 100%;
+   border-bottom: 2px #333 solid;
+}
+.pic-div {
+    width: 50%;
+    float: left;
+    overflow: hidden;
 }
 #offput {
     transform: rotate(90deg);
@@ -79,3 +105,26 @@ figcaption {
     font-size: 16px;
 }
 /********************************/
+
+
+
+#left-column {
+    float: left;
+    width: 50%;
+}
+#right-column {
+    margin-left: 50%;
+    width: 50%;
+}
+
+
+
+
+#picsFTB {
+    
+}
+#right-column {
+
+}
+
+/*NEED clean this up*/

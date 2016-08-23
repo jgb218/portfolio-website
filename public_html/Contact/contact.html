@@ -22,7 +22,8 @@ Contact page for my portfolio.
     <link href='http://fonts.googleapis.com/css?family=Josefin+Sans&subset=latin,latin-ext' rel='stylesheet' type='text/css'>  
     <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=latin" rel="stylesheet">
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="../navbar-menu.js" type="text/javascript"></script>    
+    <script src="../navbar-menu.js" type="text/javascript"></script>  
+    <script src="contact-button-handling.js" type="text/javascript"></script>    
 </head>
 
     <body>
@@ -42,6 +43,12 @@ Contact page for my portfolio.
                 </ul> 
             </div>     
 
+            <!-- Title Picture -->
+            <div id="pano-title">
+                <img class="pano" src="Media/pei-pano.jpg" alt="PEI coast">
+            </div>
+            
+            
             <!-- Title -->
             <div id="main-title">
                 <h1>
@@ -50,38 +57,102 @@ Contact page for my portfolio.
             </div>
             
             <div id="content">
+                <div id="left-column">
+                    <div id="contact-block">
+                        <ul>
+                            <li>
+                                Jeff Bulick 
+                            </li>
+                            <li>
+                                110 Vreeland Avenue
+                            </li>
+                            <li>
+                                Midland Park, NJ 07432
+                            </li>
+                            <li>
+                                jgb218@lehigh.edu
+                            </li>
+                            <li>
+                                (201) 835-6872
+                            </li>
+                            <li>
+                                <a id="pics-button" onclick="togglePics()">Show Photos</a>
+                                <a onclick="">Send Email</a>
+                                <a onclick="">View Location</a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div id="picsFTB" hidden>
+                        <center><img class="landscape" src="Media/jeff-lauren-formal.jpg" alt="Jeff and Lauren"></center>                       
+                        <center><img class="landscape" src="Media/move-in-day-help.jpg" alt="Lehigh Move In Day"></center>
+                        <center><img class="landscape" src="Media/hiking-charlotte.jpg" alt="Ramapo hiking"></center>
+                    </div>
+                    
+                </div>
+                <div id="right-column" hidden>
+                    <center><img class="landscape" src="Media/lighthouse.jpg" alt="lighthouse PEI"></center>
+                    <center><img class="portrait" src="Media/golf-dad.png" alt="Golfing Hilton Head"></center>
+                    <center><img class="landscape" src="Media/lehigh-football.jpg" alt="Lehigh Football"></center>
+                </div>
+                
+                
+                
+                
+                
+                
+                
+                <!--
+                
+                <div id="contact-block">
+                    <ul>
+                        <li>
+                            Jeff Bulick 
+                        </li>
+                        <li>
+                            110 Vreeland Avenue
+                        </li>
+                        <li>
+                            Midland Park, NJ 07432
+                        </li>
+                        <li>
+                            jgb218@lehigh.edu
+                        </li>
+                        <li>
+                            (201) 835-6872
+                        </li>
+                    </ul>
+                </div>
+                 
+                <div id="test-side">
+                    <img class="landscape" src="Media/lighthouse.jpg" alt="lighthouse PEI">
+                </div>
+      
                 <ul>
                     <li>
-                        Jeff Bulick 
+                        <div class="pic-div">
+                            <center><img class="landscape" src="Media/jeff-lauren-formal.jpg" alt="Jeff and Lauren"></center>
+                        </div>   
+                        <div class="pic-div">
+                             <center>
+                                <img class="landscape" src="Media/hiking-charlotte.jpg" alt="Ramapo hiking">
+                             </center>
+                        </div>
                     </li>
                     <li>
-                        110 Vreeland Avenue
+                        <div class="pic-div">
+                            <center><img class="portrait" src="Media/golf-dad.png" alt="Golfing Hilton Head"></center>
+                        </div>
                     </li>
-                    <li>
-                        Midland Park, NJ 07432
-                    </li>
-                    <li>
-                        jgb218@lehigh.edu
-                    </li>
-                    <li>
-                        (201) 835-6872
-                    </li>
-                    <li>
-                        
-                                <img class="landscape" src="Media/jeff-lauren-formal.jpg" alt="Jeff and Lauren">
-                            
-                                <img class="portrait" src="Media/golf-dad.png" alt="Jeff and Lauren">
-                   
-                    </li>
-                </ul>
+                </ul>   
+                
+                -->
             </div>
             
             
             <!-- footer -->
             <div id="footer">
-                <ul class="footer">
-                    <li><a target="_blank" href="https://www.youtube.com/channel/UCvboj147wiarjYmsrN7M-Ww">YOUTUBE</a></li>
-                    <li><a target="_blank" href="https://www.linkedin.com/in/jeff-bulick-2a8893aa">LINKED IN</a></li>
+                <ul class="footer">                    <li><a target="_blank" href="https://www.linkedin.com/in/jeff-bulick-2a8893aa">LINKED IN</a></li>
                     <li><a target="_blank" href="https://github.com/jgb218">GITHUB</a></li>
                 </ul>
             </div>
