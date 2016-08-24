@@ -9,13 +9,21 @@
    // $("#pics-button").click(togglePics);
 //});
 
-//Toggles the visibility of the photograph columns
+
+
+//Toggles the visibility of the photograph columns and the corresponding button text
 function togglePics() {
     $("#picsFTB").toggle(300);
     $("#right-column").toggle(300);
-    $("html, body").animate({ scrollTop: "300px" });
-    document.getElementById("pics-button").innerHTML = "Hide Photos";
-    ////////////////NEED implement hide/show innerHTML correctly
+    var buttonName = document.getElementById("pics-button").innerHTML;
+    if(buttonName === "Show Photos"){    
+        $("html, body").animate({ scrollTop: "300px" },"slow");
+        document.getElementById("pics-button").innerHTML = "Hide Photos";
+    }
+    else {
+        $("html, body").animate({ scrollTop: "0px" },"fast");
+        document.getElementById("pics-button").innerHTML = "Show Photos";
+    }
 }
 
 
