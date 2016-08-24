@@ -99,8 +99,6 @@ ul.navbar {
 }
 /****************************************/
 
-
-
 /******* Dropdown Menu *****************/
 ul.dropdown {
     list-style-type: none;
@@ -144,7 +142,6 @@ ul.dropdown {
 }
 /****************************************/
 
-
 /******* Title Section *****************/
 #landing-title{
     margin-top: 40px; 
@@ -173,8 +170,6 @@ ul.dropdown {
 }
 /****************************************/
 
-
-
 /******* Columns  *****************/
 #column-wrapper{
     margin-top: 60px;
@@ -185,15 +180,11 @@ ul.dropdown {
 } 
 #left {
     float: left;
-    /*background-color: #3FB2BF;*/
     width: 50%;
     height: 400px;
-    
 }
 #right{
-    /*background-color: red;*/
     height: 400px;
-        
 }
 figure{
     margin: 0;
@@ -213,13 +204,10 @@ figcaption{
     margin-right: 5%;
     line-height: 30px;
     font-family: 'Cardo', serif; 
-      /* font-family: 'open sans',arial,sans-serif; */
     font-size: 20px;  
     color: #333;
 }
-
 /****************************************/
-
 
 /******* Content *************************/
 #content {
@@ -238,7 +226,6 @@ figcaption{
     font-size: 18px;
     color: #333;
     font-family: 'Cardo', serif; 
-         /*font-family: 'open sans',arial,sans-serif; */
 }
 #content ul a {
     margin-left: 40px;
@@ -259,10 +246,7 @@ figcaption{
 iframe {
     
 }
-
 /****************************************/
-
-
 
 /******* Footer *************************/
 ul.footer {
@@ -271,7 +255,6 @@ ul.footer {
     padding: 0;
     overflow: hidden;
     background-color: #333;
-       /* position: fixed; */
     bottom: 0;
     width: 100%;
 }
@@ -287,7 +270,6 @@ ul.footer {
     font-weight: 400;
     font-size: 14px;
 }
-/* Change the link color to #111 (black) on hover */
 .footer li a:hover {
     background-color: #F2EFE4;
     color: #3FB2BF;

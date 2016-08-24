@@ -6,10 +6,8 @@
 */
 
 //$(document).ready(function() {
-   // $("#pics-button").click(togglePics);
+//
 //});
-
-
 
 //Toggles the visibility of the photograph columns and the corresponding button text
 function togglePics() {

@@ -13,12 +13,24 @@ for portfolio.html of bulick-portfolio.
     margin-bottom: 10px;
     font-size: 26px;
     color: #3FB2BF;
-    /*color: #333;
-    text-decoration: underline; */
     letter-spacing: 0.1em;
 }
 /*******************************/
 
+/******* Columns and Divs for pictures *****************/
+
+#left-column {
+    float: left;
+    width: 50%;
+}
+#right-column {
+    margin-left: 50%;
+    width: 50%;
+}
+#picsFTB {
+    
+}
+/********************************/
 
 /******* Content *****************/
 #content {
@@ -32,7 +44,6 @@ ul {
     font-size: 18px;
     color: #333;
     font-family: 'Cardo', serif; 
-         /*font-family: 'open sans',arial,sans-serif; */
 }
 #content ul a {
     margin-left: 20px;
@@ -83,8 +94,6 @@ ul {
     
 }
 .pano {
-    /*height: 225px; */
-   /* margin: 20px; */
    width: 100%;
    border-bottom: 2px #333 solid;
 }
@@ -105,26 +114,3 @@ figcaption {
     font-size: 16px;
 }
 /********************************/
-
-
-
-#left-column {
-    float: left;
-    width: 50%;
-}
-#right-column {
-    margin-left: 50%;
-    width: 50%;
-}
-
-
-
-
-#picsFTB {
-    
-}
-#right-column {
-
-}
-
-/*NEED clean this up*/
