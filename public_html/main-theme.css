@@ -175,19 +175,28 @@ ul.dropdown {
     margin-top: 60px;
     margin-bottom: 60px;
 }
-.column{
+.columns{
     
-} 
-#left {
+}
+.left-column {
     float: left;
     width: 50%;
-    height: 400px;
 }
-#right{
-    height: 400px;
+.right-column{
+    
+}
+.bio-column {
+    height: 450px;
+}
+#right-classes {
+    padding-top: 35px;
+}
+.classes-column {
+    height: 280px;
 }
 figure{
     margin: 0;
+    padding-top: 50px;
 }
 figcaption{
     color: #333;
@@ -199,13 +208,16 @@ figcaption{
     height: 350px;
     margin-left: 25%;
 }
-#right p{
+.bio-column p{
     margin-left: 50%;
     margin-right: 5%;
     line-height: 30px;
     font-family: 'Cardo', serif; 
     font-size: 20px;  
     color: #333;
+}
+#class-disclaimer {
+    padding-left: 40px;
 }
 /****************************************/
 
