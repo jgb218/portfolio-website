@@ -66,6 +66,7 @@ for portfolio.html of bulick-portfolio.
 }
 figure{
     margin: 0;
+    padding-top: 0;
 }
 figcaption {
     margin-left: 0;
