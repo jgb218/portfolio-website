@@ -21,7 +21,8 @@ Page contains my portfolio, recent work worth advertising.
     <link rel="stylesheet" href="portfolio.css">
     <link href='http://fonts.googleapis.com/css?family=Josefin+Sans&subset=latin,latin-ext' rel='stylesheet' type='text/css'>  
     <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=latin" rel="stylesheet">
-    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!-- Jquery harddownload -->
+    <script type="text/javascript" src="../resources/jquery-3.2.1.js"></script>
     <script src="../navbar-menu.js" type="text/javascript"></script>    
 </head>
 
@@ -39,96 +40,99 @@ Page contains my portfolio, recent work worth advertising.
                     <li><a href="portfolio.html" class="list">PORTFOLIO</a></li>
                     <li><a href="../Contact/contact.html" class="list">CONTACT</a></li>
                 </ul> 
-            </div>     
+            </div>   
+
+            <div class="textbox adjust-textbox">  
             
-            <!-- Title -->
-            <div id="main-title">
-                <h1>
-                    PORTFOLIO
-                </h1>
-            </div>  
-            
-            <!-- Content -->
-            <div id="content">
-                <!-- <h1>2016</h1> -->
-                <ul>
-                    <li>
-                        <b>ANAGLyPh:</b> NSF sponsored summer research led to the creation of a reproducible autonomous mobile robot to be used 
-                        as a learning platform by incorporating computer stereo vision and odometry in a Linux environment. 
-                    </li>
-                    <li>
-                        <div id="video-wrapper">
+                <!-- Title -->
+                <div id="main-title">
+                    <h1>
+                        PORTFOLIO
+                    </h1>
+                </div>  
+                
+                <!-- Content -->
+                <div id="content">
+                    <!-- <h1>2016</h1> -->
+                    <ul>
+                        <li>
+                            <b>ANAGLyPh:</b> NSF sponsored summer research led to the creation of a reproducible autonomous mobile robot to be used 
+                            as a learning platform by incorporating computer stereo vision and odometry in a Linux environment. 
+                        </li>
+                        <li>
+                            <div id="video-wrapper">
+                                <center>
+                                    <figure>
+                                        <iframe width="560" height="315" src="https://www.youtube.com/embed/9UY8Xu4PwGU" frameborder="0" allowfullscreen></iframe>
+                                        <figcaption>
+                                            Autonomous navigation implementing a Kalman filter and proportional controller to  
+                                            follow global planner.  
+                                        </figcaption>
+                                    </figure>
+                                </center>
+                            </div>
+                        </li>
+                        <li>
+                            <a target="_blank" href="https://github.com/jgb218/anaglyph-example/blob/master/gps_waypoint_following_node.cpp">GitHub: Example Global Planner</a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="Media/anaglyph-presentation.pdf">ANAGLyPh Final Presentation (.pdf)</a>
+                        </li>
+                        <li>
+                            <b>Simple Imperative Language Compiler:</b> Compiler that creates and parses tokens to recursively generate a 
+                            tree structure, and does a second pass through the tree to generate Intel x86/NASM Assembly code.  Linux example, see README.
+                        </li>
+                        <li>
+                            <a href="Media/sil-compiler.tar.gz">Download SIL Compiler (.tar.gz)</a>
+                        </li>
+                        <li>
+                            <b>Portfolio Website:</b> Summer project to create www.bulickjeff.com from scratch for personal use and 
+                            job employment search purposes.  No third party resources except for minimal JQuery.
+                        </li>
+                        <li>
                             <center>
                                 <figure>
-                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/9UY8Xu4PwGU" frameborder="0" allowfullscreen></iframe>
-                                    <figcaption>
-                                        Autonomous navigation implementing a Kalman filter and proportional controller to  
-                                        follow global planner.  
-                                    </figcaption>
+                                    <img class="landscape" src="Media/portfolio-website-example.png" alt="Landing Page example">
+                                    <figcaption></figcaption>
                                 </figure>
                             </center>
-                        </div>
-                    </li>
-                    <li>
-                        <a target="_blank" href="https://github.com/jgb218/anaglyph-example/blob/master/gps_waypoint_following_node.cpp">GitHub: Example Global Planner</a>
-                    </li>
-                    <li>
-                        <a target="_blank" href="Media/anaglyph-presentation.pdf">ANAGLyPh Final Presentation (.pdf)</a>
-                    </li>
-                    <li>
-                        <b>Simple Imperative Language Compiler:</b> Compiler that creates and parses tokens to recursively generate a 
-                        tree structure, and does a second pass through the tree to generate Intel x86/NASM Assembly code.  Linux example, see README.
-                    </li>
-                    <li>
-                        <a href="Media/sil-compiler.tar.gz">Download SIL Compiler (.tar.gz)</a>
-                    </li>
-                    <li>
-                        <b>Portfolio Website:</b> Summer project to create www.bulickjeff.com from scratch for personal use and 
-                        job employment search purposes.  Used NetBeans for an IDE.  
-                    </li>
-                    <li>
-                        <center>
-                            <figure>
-                                <img class="landscape" src="Media/portfolio-website-example.png" alt="Landing Page example">
-                                <figcaption></figcaption>
-                            </figure>
-                        </center>
-                    </li>
-                    <li>
-                        <a target="_blank" href="https://github.com/jgb218/portfolio-website">GitHub: portfolio-website</a>
-                    </li>
-                    <li>
-                        <b>Hangman Mobile:</b> Hangman web application using JavaScript and JQuery.  
-                        CSS designed for the browser to be adjusted to an approximate mobile screen size.
-                    </li>
-                    <li>
-                        <center><img class="portrait" src="Media/hangman-example.png" alt="Hangman Mobile example"></center>
-                    </li>
-                    <li>
-                        <a target="_blank" href="Media/HangmanMobile-jgb218/public_html/index.html">Hangman Mobile (.html)</a>
-                    </li>
-                    <li>
-                        <b>BJT Amplifier:</b> Designed a BJT amplifier by concatenating a common emitter to a common collector.  Simulated in
-                        PSPICE and breadboard tested in the lab.  
-                    </li>
-                    <li>
-                        <center>
-                            <img class="landscape" src="Media/bjt-circuit.jpg" alt="BJT example">
-                            <img class="landscape" src="Media/circuit-schematic-lab-10.jpg" alt="BJT example">
-                        </center>
-                    </li>
-                    <li>
-                        <a target="_blank" href="Media/bjt-amplifier-design.pdf">BJT Amplifier Report (.pdf)</a>
-                    </li>
-                    <li>
-                        <b>Digital to Analog and A/D Converter:</b> Lab Simulation and write up of D/A and A/D converters to gain an understanding
-                        of a vital process necessary for signal storage and playback.  
-                    </li>
-                    <li>
-                        <a target="_blank" href="Media/182Lab8.pdf">A/D and D/A Report (.pdf)</a>
-                    </li>
-                </ul>
-                <!--  <h1>2015</h1>  -->
+                        </li>
+                        <li>
+                            <a target="_blank" href="https://github.com/jgb218/portfolio-website">GitHub: portfolio-website</a>
+                        </li>
+                        <li>
+                            <b>Hangman Mobile:</b> Hangman web application using JavaScript and JQuery.  
+                            CSS designed for the browser to be adjusted to an approximate mobile screen size.
+                        </li>
+                        <li>
+                            <center><img class="portrait" src="Media/hangman-example.png" alt="Hangman Mobile example"></center>
+                        </li>
+                        <li>
+                            <a target="_blank" href="Media/HangmanMobile-jgb218/public_html/index.html">Hangman Mobile (.html)</a>
+                        </li>
+                        <li>
+                            <b>BJT Amplifier:</b> Designed a BJT amplifier by concatenating a common emitter to a common collector.  Simulated in
+                            PSPICE and breadboard tested in the lab.  
+                        </li>
+                        <li>
+                            <center>
+                                <img class="landscape" src="Media/bjt-circuit.jpg" alt="BJT example">
+                                <img class="landscape" src="Media/circuit-schematic-lab-10.jpg" alt="BJT example">
+                            </center>
+                        </li>
+                        <li>
+                            <a target="_blank" href="Media/bjt-amplifier-design.pdf">BJT Amplifier Report (.pdf)</a>
+                        </li>
+                        <li>
+                            <b>Digital to Analog and A/D Converter:</b> Lab Simulation and write up of D/A and A/D converters to gain an understanding
+                            of a vital process necessary for signal storage and playback.  
+                        </li>
+                        <li>
+                            <a target="_blank" href="Media/182Lab8.pdf">A/D and D/A Report (.pdf)</a>
+                        </li>
+                    </ul>
+                </div>
+
             </div>
             
             <!-- footer -->

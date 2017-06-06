@@ -35,6 +35,7 @@ for portfolio.html of bulick-portfolio.
 /******* Content *****************/
 #content {
     margin: 0px;
+    min-height: 250px;
 }
 ul {
     padding-left: 0;

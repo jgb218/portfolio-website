@@ -21,7 +21,8 @@ Standard web page contains resume.
     <link rel="stylesheet" href="resume.css">  
     <link href='http://fonts.googleapis.com/css?family=Josefin+Sans&subset=latin,latin-ext' rel='stylesheet' type='text/css'>  
     <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=latin" rel="stylesheet">
-    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!-- Jquery harddownload -->
+    <script type="text/javascript" src="../resources/jquery-3.2.1.js"></script>
     <script src="../navbar-menu.js" type="text/javascript"></script>    
 </head>
 
@@ -41,24 +42,27 @@ Standard web page contains resume.
                 </ul> 
             </div>     
 
-            <div id="wrapper">
-                <div id="main-title">
-                    <h1>
-                        RESUME
-                    </h1>
+            <center>
+            <div class="textbox adjust-textbox textbox-resume">
+                <div id="wrapper">
+                    <div id="main-title">
+                        <h1>
+                            RESUME
+                        </h1>
+                    </div>
+                    <p id="fullwindow">
+                        <a href="Media/Bulick_Resume.pdf" target="_blank"><b>&#x21AA;</b> View Resume in Full Window</a>
+                    </p>
+                    <div id="embed-wrapper">
+                        <center><embed src="Media/Bulick_Resume.pdf" type="application/pdf" width="800" height="800"></center>
+                    </div>
+                    <p id="timestamp"> 
+                        Last Updated: 6/6/2017 
+                    </p>
                 </div>
-                <p id="fullwindow">
-                    <a href="Media/Bulick_Resume.pdf" target="_blank"><b>&#x21AA;</b> View Resume in Full Window</a>
-                </p>
-                <div id="embed-wrapper">
-                    <center><embed src="Media/Bulick_Resume.pdf" type="application/pdf" width="800" height="800"></center>
-                </div>
-                <p id="timestamp"> 
-                    Last Updated: 9/08/2016 
-                </p>
-
             </div>
-            
+            </center>
+      
             <!-- footer -->
             <div id="footer">
                 <ul class="footer">

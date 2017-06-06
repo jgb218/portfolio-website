@@ -7,14 +7,17 @@ for resume.html of bulick-portfolio.
 */
 
 #wrapper {
-    width: 800px; 
-    margin: 0 auto; 
+    /** width: 800px;   **/
+    
+}
+.textbox-resume {
+    width: 880px;
+    padding: 40px;
 }
 
 /******* Content *****************/
 #main-title h1{
     text-align: center;
-    margin-top: 120px;
     margin-bottom: 40px;
     font-size: 26px;
     color: #3FB2BF;
@@ -35,7 +38,6 @@ p {
 }
 #timestamp {
     text-align: right;
-    margin-bottom: 40px;
 }
 p a {
     color: #333;

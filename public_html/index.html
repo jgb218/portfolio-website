@@ -16,12 +16,14 @@ Landing page for my portfolio.
     <meta name="keywords" content="Jeff Bulick">
     <meta name="author" content="Jeff Bulick">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="Media/jb_icon.png">
+    <link rel="icon" href="Media/jb_icon.png"> 
     <link rel="stylesheet" href="main-theme.css">  
     <link href='http://fonts.googleapis.com/css?family=Josefin+Sans&subset=latin,latin-ext' rel='stylesheet' type='text/css'>  
-    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=latin" rel="stylesheet">
-    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="navbar-menu.js" type="text/javascript"></script>   
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=latin" rel="stylesheet"> 
+    <script src="navbar-menu.js" type="text/javascript"></script>  
+    <!-- Jquery harddownload -->
+    <script type="text/javascript" src="resources/jquery-3.2.1.js"></script>
+    <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
 </head>
 
     <body>
@@ -45,122 +47,174 @@ Landing page for my portfolio.
                 <h3>​B.S. COMPUTER ENGINEERING, MINOR: ECONOMICS</h3>
             </div>    
             
-            <!-- main columns -->
-            <div id="column-wrapper">
-                <div class="left-column bio-column">
-                    <figure>
-                        <img id="faceshot" src="Media/faceshot.png" alt="profile picture">
-                        <figcaption>Jeff Grant Bulick</figcaption>
-                    </figure>
-                </div>
-                <div class="right-column bio-column">
-                    <p>
-                        I am a full time undergraduate student in my third year of studies at Lehigh University in the P.C. Rossin College of Engineering 
-                    and Applied Science. I am pursuing a B.S. in Computer Engineering paired with an Economics minor. In my opinion, 
-                    the blend between both engineering and business knowledge is a great skill set to take to the work place after 
-                    graduation. The importance pertaining to feasibility of design should be considered throughout the design process.
-                    My high school degree is from Bergen County Academies, a magnet high school in Hackensack, NJ. I was part of the 
-                    Class of 2014, the Academy for Engineering and Design Technology. I am a brother of Sigma Phi Epsilon in the 
-                    Pennsylvania Epsilon chapter.  
-                    During the summer of 2016, I took part in a 10 week NSF REU focused on autonomous mobile robotics with Lehigh’s 
-                    Vision, Assistive Devices, and Experimental Robotics Laboratory.  I will be interning at KPMG Montvale for the 
-                    summer of 2017 working on software for internal web application clients and databases.   
-                    </p>
-                </div>
-            </div>    
-            
-            <!-- content -->
-            <div id="content">
-                <h1>PROFICIENCIES</h1>
-                <ul>
-                    <li>
-                        <b>Software:</b> C++, Mobile Robotics, Web Design and Applications, SQL / Databases, Linux, Version Control, 
-                                                Haskell, Java, Assembly, Python, Mat Lab
-                    </li>
-                    <li>
-                        <b>Hardware:</b> Signals and Systems, Hands on experience with electronic test equipment and design, SPICE, 
-                                                Arduino, PTH soldering
-                    </li>
-                    <li>
-                        <b>Other:</b> 3D CAD, Machine Shop Experience, Leadership / Teaching, Microsoft Office Suite
-                    </li>
-                    <li>
-                        <a href="Resume/resume.html"><b>&#x21AA;</b> Go To My Resume </a>
-                    </li>
-                </ul>
-                
-                <!-- Courses columns -->
-                <div class="columns">
-                    <div class="left-column classes-column">
-                        <h1>COURSES CURRENTLY PURSUING</h1>
-                        <ul>
-                            <li>
-                                <b>FALL '16</b> 
-                            </li>
-                            <li>
-                                - Databases (SQL, Access)
-                            </li>
-                            <li>
-                                - Data Mining (Python, Grad level cross-listed)
-                            </li>
-                            <li>
-                                - Money and Banking (Economics minor)
-                            </li>
-                            <li>
-                                - Programming Languages (functional Haskell)
-                            </li>
-                            <li>
-                                - Signals and Systems (math intensive EE)
-                            </li>
-                            <li>
-                                - Signals and Systems Lab
-                            </li>
-                        </ul>
-                        <p id="class-disclaimer">
-                            Knowledge/Experience not yet reflected on my resume, proficiencies, or portfolio.
+
+            <div class="textbox">
+
+                <!-- content -->
+                <div id="content">
+                    <div>
+                        <center>
+                            <div>
+                                <img id="faceshot" src="Media/portfolio-pic.jpg" alt="profile picture">
+                            </div>
+                            <div class="caption">
+                                <h3>Jeff Grant Bulick</h3>
+                            </div>
+                        </center>
+                    </div>
+                    
+                    <div class="bio double-space">
+                        <h1>BIO</h1>
+                        <p>
+                            I am a full time undergraduate student in my final year of studies at Lehigh University in the P.C. Rossin College of Engineering 
+                        and Applied Science where I am pursuing a B.S. in Computer Engineering paired with an Economics minor.  
+                        The blend between both engineering and business knowledge is a great skill set to take to the work place after 
+                        graduation. The importance pertaining to feasibility of design should always be considered throughout 
+                        the design process.  My high school degree is from Bergen County Academies, a magnet educational institution that continues to hold top rankings on a national level.
+                        I was a member of the Academy for Engineering and Design Technology, and a three sport varsity athlete. 
+                        </p>
+                        <p>
+                            My interests include but are not limited to clientside user-interaction, robotics, web and mobile applications, IoT, finance, and entrepeneurship.
+                        I will be taking analysis of algorithms and network security in the coming semesters to gain some insight towards data security.
+                        In an era so susceptible to cyber attack, protection of information is of the upmost importance now that lives, companies, banks, and government agencies
+                        revolve around sensitive information.
+                        </p>
+                        <p>  
+                            During the summer 2016, I took part in a National Science Foundation REU focused on autonomous mobile robotics with Lehigh’s 
+                        Vision, Assistive Devices, and Experimental Robotics Laboratory.  I will be interning at KPMG Montvale for the 
+                        summer 2017 working on internal web application clients and databases. I am also in the process of finding a full time co-op 
+                        for the spring 2018 because I will essentially finish my degree a semester early and take minimal part time credits in the spring. 
                         </p>
                     </div>
-                    <div  id="right-classes" class="right-column classes-column">
+
+                    <h1>PROFICIENCIES</h1>
+                    <ul>
+                        <li>
+                            <b>Software:</b> Web Design and Applications, Databases, Mobile Robotics, Version Control, Collaborative teamwork, Microcontrollers, Assembly
+                        </li>
+                        <li>
+                            <b>Hardware:</b> Verilog, FPGA, Computer Architecture, SPICE, Semiconductors, Hands on design experience with analog and digital 
+                            electronic test equipment
+                        </li>
+                        <li>
+                            <b>Comfortable Languages:</b> C++, C, Java, Frontend languages, SQL, Matlab, Haskell, Python 
+                        </li>
+                        <li>
+                            <b>Other:</b> 3D CAD, Machine Shop Experience, PTH soldering, Leadership / Teaching, Microsoft Office Suite
+                        </li>
+                        <li>
+                            <a href="Resume/resume.html"><b>&#x21AA;</b> Go To My Resume </a>
+                        </li>
+                    </ul>
+                    
+                    <!-- Courses columns -->
+                    <div class="columns">
+                        <div class="left-column classes-column">
+                            <h1>COURSES CURRENTLY PURSUING</h1>
+                            <ul>
+                                <li>
+                                    <b>FALL '17</b> 
+                                </li>
+                                <li>
+                                    - Design and Analysis of Algorithms
+                                </li>
+                                <li>
+                                    - Digital System Design
+                                </li>
+                                <li>
+                                    - ECO Development (Economics minor)
+                                </li>
+                                <li>
+                                    - Environmental Economics (Economics minor)
+                                </li>
+                                <li>
+                                    - Operating System Design
+                                </li>
+                                <li>
+                                    - Senior Design Project Part I
+                                </li>
+                            </ul>
+                            <p id="class-disclaimer">
+                                Knowledge/Experience not yet reflected on my resume, proficiencies, or portfolio.
+                            </p>
+                        </div>
+                        <div  id="right-classes" class="right-column classes-column">
+                            <ul>
+                                <li>
+                                    <b>SPRING '18</b> 
+                                </li>
+                                <li>
+                                    - Network Security (Free elective TBD)
+                                </li>
+                                <li>
+                                    - Senior Design Project Part II
+                                </li>
+                            </ul>
+                        </div>
+                    </div> 
+
+                    <div class="double-space">
+                        <h1>MOST RECENT WORK</h1>
                         <ul>
                             <li>
-                                <b>SPRING '17</b> 
+                                <b>ANAGlyph:</b> NSF sponsored summer research led to the creation of a reproducible autonomous mobile robot to 
+                                be used as a learning platform using ROS as IPC management for a network of 
+                                onboard sensors to perform efficient odometry in a Linux environment.
                             </li>
                             <li>
-                                - Computer Architecture
+                                <div id="video-wrapper">
+                                    <center>
+                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/pyaUWZBe6h0" frameborder="0" allowfullscreen></iframe>                          
+                                    </center>
+                                </div>
                             </li>
                             <li>
-                                - Digital Systems Laboratory
+                                <a href="Portfolio/portfolio.html"><b>&#x21AA;</b> Go To My Portfolio</a>
                             </li>
-                            <li>
-                                - Discrete Structures
-                            </li>
-                            <li>
-                                - Fundamentals of Semiconductor Devices
-                            </li>
-                            <li>
-                                - Software Engineering
-                            </li>
-
                         </ul>
                     </div>
-                </div> 
-                <h1>MOST RECENT WORK</h1>
-                <ul>
-                    <li>
-                        <b>ANAGlyph:</b> Created a reproducible autonomous mobile robot to be used 
-                        as a learning platform by incorporating computer stereo vision and odometry in a Linux environment. 
-                    </li>
-                    <li>
-                        <div id="video-wrapper">
+
+                    <div class="double-space">
+                        <h1>LEADERSHIP</h1>
+                        <ul>
+                            <li>
+                                <b>Sigma Phi Epsilon:</b> I am an active brother in the Pennsylvania Epsilon chapter. The majority of brothers 
+                                are engineers and dual engineering/business honors that hold themselves to a very high standard of sucess and gentlemanliness.
+                            </li>
+                            <li>
+                                <b>Greek Emerging Leaders:</b> Attend weekly meetings to gain leadership knowledge and inspire change in the Greek community. 
+                                Topics included public speaking, inclusive diversity, hazing prevention, leadership style, etc.
+                            </li>
+                            <li>
+                                <b>First-year Residence Hall President:</b> Lead a team of five to plan, budget, and market social events for first-year students
+                                to promote a comfortable transition to college life. 
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Links to LinkedIn and GitHub -->
+                    <div class="columns social-links">
+                        <div class="left-column">
+                                <div class="center-it">
+                                    <div class="LI-profile-badge"  data-version="v1" data-size="medium" data-locale="en_US" data-type="horizontal" 
+                                    data-theme="dark" data-vanity="jeff-bulick-2a8893aa"><a class="LI-simple-link" 
+                                    href='https://www.linkedin.com/in/jeff-bulick-2a8893aa?trk=profile-badge' target="_blank">Jeff Bulick</a></div>
+                                </div>
+                        </div>
+                        <div class="right-column">
                             <center>
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/pyaUWZBe6h0" frameborder="0" allowfullscreen></iframe>                          
+                                <div id="github">
+                                    <a href="https://github.com/jgb218"  target="_blank"><img src="Media/GitHub-Mark-120px-plus.png" alt="github link"></a>
+                                </div>
+                                <div>
+                                    <h3>GitHub</h3>
+                                </div>
                             </center>
                         </div>
-                    </li>
-                    <li>
-                        <a href="Portfolio/portfolio.html"><b>&#x21AA;</b> Go To My Portfolio</a>
-                    </li>
-                </ul>
+                    </div>
+
+                </div>
+
             </div>
             
             <!-- footer -->
