@@ -1,5 +1,5 @@
 /*
-maintheme.css
+main.css
 Jeff Bulick
 06.28.2016
 This cascading styles sheet is the external style sheet 
@@ -211,8 +211,7 @@ figure{
     font-weight: bold;
 }
 #faceshot{
-    margin-top: 40px;
-    height: 350px;
+    height: 320px;
     border: 2px solid #333;
     border-radius: 50%;
 }
@@ -277,7 +276,7 @@ figure{
 
 /******** Link implementations **********/
 .social-links {
-    padding: 40px;
+    padding-top: 40px;
     height: 250px;
 }
 #github {
