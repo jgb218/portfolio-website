@@ -53,8 +53,30 @@ Page contains my portfolio, recent work worth advertising.
                 
                 <!-- Content -->
                 <div id="content">
-                    <!-- <h1>2016</h1> -->
                     <ul>
+
+                        <li>
+                            <b>Software Engineering:</b> Semester long collaborative team project to enhance teamwork and web application design.  
+                            Learned better practices for managing object-oriented design, scalability, technical debt, patterns, etc.
+                            Positions included project manager, frontend, backend, android, and testing.  The roles where I exceled were project manager,
+                            frontend, and backend.  Basis of the project was to create a message board by deploying a free backend server and database on Heroku.
+                            Brains of the UI were coded in Typescript, a transpiler for more robust JS error catching.  Databases held different user 
+                            accounts, messages, comments, and a finite state machine implementation was used for a liking system.  Accounts were manually managed
+                            through our databases and then the web application was converted to use Google OAuth 2.0 to handle login.
+                            Frontend / backend communication by transmission of Json data through HTTP routes.  Our group took the project a step further by 
+                            introducing Direct Messaging which had an analagous feel to GroupMe.  Professor requested that the source code not be made public, so 
+                            the below figures are some snapshots of the web application in action.    
+                        </li>
+                        <li>
+                            <center>
+                                <img src="Media/message-board-1.PNG" alt="Hagrid message board landing"></img>
+                            </center>
+                        </li>
+                        <li class="last-tag-project">
+                            <center>
+                                <img src="Media/message-board-3.PNG" alt="Hagrid message board DM"></img>
+                            </center>
+                        </li>
                         <li>
                             <b>ANAGLyPh:</b> NSF sponsored summer research led to the creation of a reproducible autonomous mobile robot to be used 
                             as a learning platform by incorporating computer stereo vision and odometry in a Linux environment. 
@@ -75,14 +97,59 @@ Page contains my portfolio, recent work worth advertising.
                         <li>
                             <a target="_blank" href="https://github.com/jgb218/anaglyph-example/blob/master/gps_waypoint_following_node.cpp">GitHub: Example Global Planner</a>
                         </li>
-                        <li>
+                        <li class="last-tag-project">
                             <a target="_blank" href="Media/anaglyph-presentation.pdf">ANAGLyPh Final Presentation (.pdf)</a>
+                        </li>
+                        <li>
+                            <b>MIPS Simulator:</b> This program is a simple simulator for a subset of MIPS instructions. The simulator is written in MIPS assembly to further gain knowledge 
+                            on the stored-program concept and computer architecture.  It handles R, I, and J type instructions.  The example instructions loaded into memory represent 
+                            a childish division program that divides 14 by 7 through repeated subtraction. Developed and tested in QtSpim.  The figure below is a section of the standard output
+                            from the simulator showing the program counter, instruction fetch, register values, ALU output, etc. in hex representation for each executed instruction.  
+                        </li>
+                        <li>
+                            <center>
+                                <img src="Media/mips-simulator.PNG" alt="MIPS simulator stdout"></img>
+                            </center>
+                        </li>
+                        <li class="last-tag-project">
+                            <a target="_blank" href="https://github.com/jgb218/mips-simulator/blob/master/bulick_mp4stage2.s">GitHub: mips-simulator.s</a>
+                        </li>
+                        <li>
+                            <b>Microcontrollers:</b> First program is USART implementation on Atmel AVR microcontroller using interrupts.  Second program is a 
+                            basic stopwatch design using USART and timer interrupts.  Testing done on STK-500 evalation board with ATmega8515 microcontroller.   
+                        </li>
+                        <li>
+                            <center>
+                                <img src="Media/stk500-evalation.png" alt="STK-500 evalation board"></img>
+                            </center>
+                        </li>
+                        <li>
+                            <a target="_blank" href="https://github.com/jgb218/digital-lab/blob/master/USART.c">GitHub: USART.c</a>
+                        </li>
+                        <li class="last-tag-project">
+                            <a target="_blank" href="https://github.com/jgb218/digital-lab/blob/master/stopwatch.c">GitHub: stopwatch.c</a>
+                        </li>
+                        <li>
+                            <b>FPGA:</b> Verilog programs illustrating FPGA circuits on the Nexys-4 DDR board.  
+                            The first program illustrates asynchronous sequential circuit implementation.  The second Verilog file contains three modules 
+                            that tackle some complex logic to create counters that are displayed on 7segment LEDs using debounced push buttons.  
+                        </li>
+                        <li>
+                            <center>
+                                <img src="Media/nexys-4-ddr.png" alt="Nexys-4 DDR board"></img>
+                            </center>
+                        </li>
+                        <li>
+                            <a target="_blank" href="https://github.com/jgb218/digital-lab/blob/master/asynchronous.v">GitHub: asynchronous.v</a>
+                        </li>
+                        <li class="last-tag-project">
+                            <a target="_blank" href="https://github.com/jgb218/digital-lab/blob/master/complex-logic.v">GitHub: complex-logic.v</a>
                         </li>
                         <li>
                             <b>Simple Imperative Language Compiler:</b> Compiler that creates and parses tokens to recursively generate a 
                             tree structure, and does a second pass through the tree to generate Intel x86/NASM Assembly code.  Linux example, see README.
                         </li>
-                        <li>
+                        <li class="last-tag-project">
                             <a href="Media/sil-compiler.tar.gz">Download SIL Compiler (.tar.gz)</a>
                         </li>
                         <li>
@@ -97,7 +164,7 @@ Page contains my portfolio, recent work worth advertising.
                                 </figure>
                             </center>
                         </li>
-                        <li>
+                        <li class="last-tag-project">
                             <a target="_blank" href="https://github.com/jgb218/portfolio-website">GitHub: portfolio-website</a>
                         </li>
                         <li>
@@ -107,7 +174,7 @@ Page contains my portfolio, recent work worth advertising.
                         <li>
                             <center><img class="portrait" src="Media/hangman-example.png" alt="Hangman Mobile example"></center>
                         </li>
-                        <li>
+                        <li class="last-tag-project">
                             <a target="_blank" href="Media/HangmanMobile-jgb218/public_html/index.html">Hangman Mobile (.html)</a>
                         </li>
                         <li>
@@ -120,7 +187,7 @@ Page contains my portfolio, recent work worth advertising.
                                 <img class="landscape" src="Media/circuit-schematic-lab-10.jpg" alt="BJT example">
                             </center>
                         </li>
-                        <li>
+                        <li class="last-tag-project">
                             <a target="_blank" href="Media/bjt-amplifier-design.pdf">BJT Amplifier Report (.pdf)</a>
                         </li>
                         <li>
